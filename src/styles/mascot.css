@@ -1,0 +1,100 @@
+/* ========================================
+   DESKTOP MASCOT — WIZARD
+   ======================================== */
+
+#desktop-mascot {
+  position: fixed;
+  z-index: 800;
+  width: 40px;
+  height: 52px;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+  pointer-events: auto;
+  will-change: left, top, transform;
+}
+
+#desktop-mascot:hover {
+  filter: drop-shadow(0 0 12px rgba(124, 58, 237, 0.8)) drop-shadow(0 0 24px rgba(167, 139, 250, 0.5));
+}
+
+#desktop-mascot.paused svg {
+  animation: wizardFloat 0.6s ease-in-out infinite;
+}
+
+@keyframes wizardFloat {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+/* Speech Bubble */
+.mascot-bubble {
+  position: fixed;
+  z-index: 801;
+  background: var(--bg-primary, #1a1a1a);
+  color: var(--text-primary, #f0f0f0);
+  border: 1px solid rgba(124, 58, 237, 0.5);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  width: max-content;
+  max-width: 250px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3), 0 0 40px rgba(124, 58, 237, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px) scale(0.85);
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mascot-bubble.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Arrow pointing down (default: bubble above wizard) */
+.mascot-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid var(--bg-primary, #1a1a1a);
+}
+
+/* Arrow pointing up (bubble below wizard) */
+.mascot-bubble.below::after {
+  bottom: auto;
+  top: -7px;
+  border-top: none;
+  border-bottom: 7px solid var(--bg-primary, #1a1a1a);
+}
+
+/* Sparkle trail particles */
+.mascot-trail-particle {
+  position: fixed;
+  z-index: 798;
+  font-size: 10px;
+  color: #a78bfa;
+  pointer-events: none;
+  animation: sparkleFade 0.8s ease-out forwards;
+  text-shadow: 0 0 6px rgba(167, 139, 250, 0.8);
+}
+
+@keyframes sparkleFade {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.3);
+  }
+}

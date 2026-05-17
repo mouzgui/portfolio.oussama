@@ -1,0 +1,189 @@
+/* ========================================
+   WINDOW SYSTEM
+   ======================================== */
+
+.app-window {
+  position: fixed;
+  min-width: 400px;
+  min-height: 300px;
+  border-radius: var(--window-radius, 10px);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  transition: box-shadow var(--transition-normal);
+}
+
+.app-window.focused {
+  box-shadow: var(--shadow-xl), 0 0 0 1px var(--border-strong, rgba(255,255,255,0.08));
+}
+
+.app-window.unfocused {
+  box-shadow: var(--shadow-md);
+}
+
+.app-window.unfocused .window-header { opacity: 0.7; }
+
+/* Open / Close animations */
+.app-window.opening {
+  animation: windowOpen 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.app-window.closing {
+  animation: windowClose 0.2s ease-in forwards;
+  pointer-events: none;
+}
+
+@keyframes windowOpen {
+  from { opacity: 0; transform: scale(0.88); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes windowClose {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.88); }
+}
+
+/* Minimize animation */
+.app-window.minimizing {
+  animation: windowMinimize 0.4s ease-in forwards;
+  pointer-events: none;
+}
+
+@keyframes windowMinimize {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.3) translateY(100vh); }
+}
+
+/* Maximize transition */
+.app-window.maximizing {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* ========================================
+   WINDOW HEADER
+   ======================================== */
+
+.window-header {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 var(--space-3);
+  background: var(--window-header-bg, rgba(35, 35, 35, 0.85));
+  backdrop-filter: var(--window-header-blur, blur(20px));
+  border-bottom: 1px solid var(--border);
+  cursor: default;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Traffic light buttons */
+.traffic-lights {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.traffic-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 700;
+  color: transparent;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.traffic-light.close { background: var(--red); }
+.traffic-light.minimize { background: var(--yellow); }
+.traffic-light.maximize { background: var(--green); }
+
+.app-window.unfocused .traffic-light {
+  background: var(--bg-tertiary) !important;
+}
+
+.traffic-lights:hover .traffic-light {
+  color: rgba(0,0,0,0.65);
+}
+
+.traffic-light.close:hover { background: var(--red-hover); }
+.traffic-light.minimize:hover { background: var(--yellow-hover); }
+.traffic-light.maximize:hover { background: var(--green-hover); }
+
+/* Window title */
+.window-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50%;
+  pointer-events: none;
+}
+
+/* Window toolbar (optional, below header) */
+.window-toolbar {
+  display: flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  background: rgba(35, 35, 35, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.window-toolbar button {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+}
+
+.window-toolbar button:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--text-primary);
+}
+
+/* ========================================
+   WINDOW BODY
+   ======================================== */
+
+.window-body {
+  flex: 1;
+  overflow: auto;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+/* Resize handles */
+.resize-handle {
+  position: absolute;
+  z-index: 10;
+}
+
+.resize-handle.right {
+  top: 0; right: -3px; width: 6px; height: 100%;
+  cursor: ew-resize;
+}
+
+.resize-handle.bottom {
+  bottom: -3px; left: 0; width: 100%; height: 6px;
+  cursor: ns-resize;
+}
+
+.resize-handle.corner {
+  bottom: -3px; right: -3px; width: 12px; height: 12px;
+  cursor: nwse-resize;
+}

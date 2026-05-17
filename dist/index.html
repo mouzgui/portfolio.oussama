@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive portfolio presented as a macOS-inspired desktop operating system. Explore projects, experience, and more through an immersive desktop environment." />
+  <title>Desktop Portfolio — OS Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+  <script type="module" crossorigin src="/assets/index-C25r-pmB.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CxPLfxGw.css">
+</head>
+<body>
+  <!-- Boot Screen -->
+  <div id="boot-screen">
+    <div class="boot-logo">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+        <rect width="56" height="56" rx="12" fill="#fff"/>
+        <path d="M16 40V16h8l8 12 8-12h8v24h-7V27l-6 9h-6l-6-9v13z" fill="#0a0a0a"/>
+      </svg>
+    </div>
+    <div class="boot-progress">
+      <div class="boot-progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Desktop Environment -->
+  <div id="desktop-environment" class="hidden">
+    <!-- Menu Bar -->
+    <header id="menu-bar">
+      <div class="menu-left">
+        <button id="menu-logo" aria-label="System menu">
+          <svg width="18" height="18" viewBox="0 0 56 56" fill="none">
+            <rect width="56" height="56" rx="12" fill="#fff"/>
+            <path d="M16 40V16h8l8 12 8-12h8v24h-7V27l-6 9h-6l-6-9v13z" fill="#0a0a0a"/>
+          </svg>
+        </button>
+        <div class="menu-items">
+          <button class="menu-item" data-menu="file">File</button>
+          <button class="menu-item" data-menu="edit">Edit</button>
+          <button class="menu-item" data-menu="view">View</button>
+          <button class="menu-item" data-menu="window">Window</button>
+          <button class="menu-item" data-menu="help">Help</button>
+        </div>
+      </div>
+      <div class="menu-center">
+        <span id="active-app-name">Finder</span>
+      </div>
+      <div class="menu-right">
+        <button class="system-icon" id="wifi-icon" aria-label="Wi-Fi">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 18c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm0-4c-1.62 0-3.07.65-4.13 1.72l1.42 1.42A3.93 3.93 0 0112 16c1.11 0 2.11.45 2.83 1.17l1.42-1.42A5.92 5.92 0 0012 14zm0-4c-2.73 0-5.19 1.11-6.97 2.91l1.42 1.42A7.94 7.94 0 0112 12c2.21 0 4.21.9 5.66 2.34l1.42-1.42A9.94 9.94 0 0012 10zm0-4c-3.82 0-7.27 1.56-9.77 4.06l1.42 1.42C5.7 9.43 8.69 8 12 8s6.3 1.43 8.36 3.48l1.42-1.42A13.94 13.94 0 0012 6z"/></svg>
+        </button>
+        <button class="system-icon" id="battery-icon" aria-label="Battery">
+          <svg width="20" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.34C7 21.4 7.6 22 8.33 22h7.34c.73 0 1.33-.6 1.33-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+        </button>
+        <button class="system-icon" id="trophy-icon" aria-label="Achievements">🏆</button>
+        <span id="menu-clock"></span>
+      </div>
+    </header>
+
+    <!-- Desktop Area -->
+    <main id="desktop">
+      <div id="desktop-icons"></div>
+      <div id="selection-rect" class="hidden"></div>
+    </main>
+
+    <!-- Windows Container -->
+    <div id="windows-container"></div>
+
+    <!-- Context Menu -->
+    <div id="context-menu" class="hidden">
+      <button data-action="open">Open</button>
+      <button data-action="get-info">Get Info</button>
+      <div class="context-divider"></div>
+      <button data-action="move-to-trash">Move to Trash</button>
+    </div>
+
+    <!-- Dock -->
+    <nav id="dock">
+      <div id="dock-items"></div>
+    </nav>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container"></div>
+  </div>
+
+</body>
+</html>

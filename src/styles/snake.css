@@ -1,0 +1,48 @@
+/* ========================================
+   SNAKE GAME
+   ======================================== */
+
+.snake-board {
+  display: grid;
+  grid-template-columns: repeat(20, 22px);
+  gap: 0px;
+  background: #111;
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  user-select: none;
+  position: relative;
+}
+
+.snake-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  border-radius: 1px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.snake-cell.snake-head {
+  background: #27C93F;
+  border-radius: 4px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: 0 0 6px rgba(39, 201, 63, 0.5);
+}
+
+.snake-cell.snake-body {
+  background: #1fa034;
+  border-radius: 3px;
+}
+
+.snake-cell.snake-food {
+  font-size: 16px;
+  animation: foodPulse 0.6s ease infinite alternate;
+}
+
+@keyframes foodPulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}

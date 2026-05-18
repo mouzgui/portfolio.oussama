@@ -1,6 +1,6 @@
 // Terminal App — interactive command-line interface
 
-import { createWindow } from '../core/windowManager.js';
+import { createWindow, closeWindow } from '../core/windowManager.js';
 import { fs } from '../core/fileSystem.js';
 import { projects, cvContent } from '../data/portfolio.js';
 import { showToast, triggerConfetti, startMatrixRain } from '../utils/animations.js';
@@ -429,7 +429,7 @@ Happy exploring! 🔍`, 'output');
       case 'exit':
         appendOutput('Closing terminal...', 'info');
         setTimeout(() => {
-          const { closeWindow } = require('../core/windowManager.js');
+          closeWindow(id);
         }, 500);
         break;
 

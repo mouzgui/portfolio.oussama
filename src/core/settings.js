@@ -35,10 +35,10 @@ export function updateSettings(updates) {
   const current = getSettings();
   const next = { ...current, ...updates };
   localStorage.setItem('portfolio_settings', JSON.stringify(next));
-  
+
   applyWallpaper(next.wallpaper);
   applyTheme(next.theme);
-  
+
   listeners.forEach(cb => cb(next));
   return next;
 }
@@ -52,7 +52,7 @@ export function applyTheme(theme) {
 export function applyWallpaper(wallpaper) {
   const desktop = document.getElementById('desktop');
   if (!desktop) return;
-  
+
   if (wallpaper.startsWith('url(')) {
     desktop.style.backgroundImage = wallpaper;
     desktop.style.backgroundColor = 'transparent';

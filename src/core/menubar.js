@@ -1,6 +1,7 @@
 // Menu Bar Controller
 
 import { onWindowEvent } from './windowManager.js';
+import { openSystemPreferences } from '../apps/systemPreferences.js';
 
 let clockInterval;
 
@@ -134,9 +135,7 @@ function setupLogoDropdown() {
     const prefBtn = document.createElement('button');
     prefBtn.innerHTML = 'System Preferences...';
     prefBtn.addEventListener('click', () => {
-      import('../apps/systemPreferences.js').then(module => {
-        module.openSystemPreferences();
-      }).catch(err => console.error(err));
+      openSystemPreferences();
     });
     
     dropdown.appendChild(prefBtn);

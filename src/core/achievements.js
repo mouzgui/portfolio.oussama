@@ -1,4 +1,5 @@
 // Achievements System — quiet, system-level achievement tracking
+import { openAchievements } from '../apps/achievementsWindow.js';
 
 const ACHIEVEMENTS = [
   { id: 'first_boot', name: 'First Boot', desc: 'Booted up the OS for the first time.' },
@@ -104,7 +105,7 @@ function showAchievementNotification(achievement) {
 
   notif.addEventListener('click', () => {
     notif.remove();
-    import('../apps/achievementsWindow.js').then(m => m.openAchievements());
+    openAchievements();
   });
 
   document.body.appendChild(notif);

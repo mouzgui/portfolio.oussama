@@ -100,6 +100,8 @@ function setupDesktopInteractions() {
   // Keyboard: Enter to open, Delete to trash
   document.addEventListener('keydown', (e) => {
     if (selectedIcons.size === 0) return;
+    // Ignore keyboard events from inside windows (e.g. terminal input)
+    if (e.target.closest('.window')) return;
     if (e.key === 'Enter') {
       selectedIcons.forEach(el => {
         const name = el.dataset.name;

@@ -76,7 +76,7 @@ function activateDevMode() {
   console.log('%c  • CSS Custom Properties for theming', 'font-size: 12px; color: #8e8e93;');
   console.log('%c  • Vite for bundling', 'font-size: 12px; color: #8e8e93;');
   console.log('%c  • A lot of love and attention to detail 💜', 'font-size: 12px; color: #8e8e93;');
-  console.log('%cLet\'s connect: alex@designcraft.dev', 'font-size: 14px; color: #FFBD2E; font-weight: bold;');
+  console.log('%cLet\'s connect: omouzgui@gmail.com', 'font-size: 14px; color: #FFBD2E; font-weight: bold;');
 
   // Add glow to all open windows
   document.querySelectorAll('.app-window').forEach(w => {

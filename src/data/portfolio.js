@@ -158,6 +158,7 @@ import headlessBanner from "../projects/Headless-store-assets/Headless-Store-PWA
 import zombieBanner from "../projects/zombie-app/zombie-banner.png";
 import complaintsBanner from "../projects/complaints_app/complaints-banner.png";
 import dashboardBanner from "../projects/Dashboard/ayman-banner.png";
+import gestionBanner from "../projects/gestion-de-stock/gestion-de-stock.png";
 
 export const projects = {
   "Red Gold Portal.app": {
@@ -382,6 +383,54 @@ export const projects = {
             "Admin Dashboard",
             "Export to CSV/PDF",
             "Real-time analytics",
+          ],
+        },
+      ],
+    },
+  },
+  "Gestion de Stock.app": {
+    title: "Gestion de Stock",
+    icon: "📦",
+    description:
+      "A modern, responsive, and multilingual Stock Management System built with Next.js, Supabase, and Tailwind CSS. This application helps businesses efficiently track inventory, manage stock movements, and monitor low-stock alerts in real-time.",
+    tech: ["Next.js 16", "Supabase", "Tailwind CSS v4", "Zustand"],
+    liveUrl: "#",
+    githubUrl: "#",
+    year: "2024",
+    image: gestionBanner,
+    details: {
+      highlights: [
+        {
+          title: "📊 Interactive Dashboard",
+          description:
+            "Overview of total products, stock quantities, stock health, and recent movements.",
+        },
+        {
+          title: "🚨 Low Stock Alerts",
+          description:
+            "Automatically highlights products that fall below their minimum required quantity.",
+        },
+        {
+          title: "🌍 Multilingual & PWA",
+          description:
+            "Fully localized in English, French, and Arabic (RTL) and installable as a PWA.",
+        },
+      ],
+      features: [
+        {
+          category: "📦 Stock Management",
+          items: [
+            "Add, edit, delete, and search products easily",
+            "Dedicated interfaces for Stock In and Stock Out",
+            "Comprehensive log of all stock movements",
+          ],
+        },
+        {
+          category: "⚙️ Core Capabilities",
+          items: [
+            "Admin login powered by Supabase Auth",
+            "Responsive UI for mobile, tablet, and desktop",
+            "Zustand state management",
           ],
         },
       ],

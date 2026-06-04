@@ -331,6 +331,64 @@ export const projects = [
       ],
     },
   },
+  {
+    id: 6,
+    title: "Gestion de Stock.",
+    description:
+      "A modern, responsive, and multilingual Stock Management System built with Next.js, Supabase, and Tailwind CSS. This application helps businesses efficiently track inventory, manage stock movements, and monitor low-stock alerts in real-time.",
+    category: "Web, App",
+    tags: ["Next.js 16", "Supabase", "Tailwind CSS v4", "Zustand"],
+    image: "/projects/gestion-de-stock/gestion-de-stock.png",
+    featured: true,
+    liveUrl: "#",
+    githubUrl: "#",
+    details: {
+      highlights: [
+        {
+          title: "📊 Interactive Dashboard",
+          description: "Overview of total products, stock quantities, stock health, and recent movements.",
+        },
+        {
+          title: "🚨 Low Stock Alerts",
+          description: "Automatically highlights products that fall below their minimum required quantity.",
+        },
+        {
+          title: "🌍 Multilingual Support",
+          description: "Fully localized in English, French, and Arabic (with complete RTL support for Arabic).",
+        },
+        {
+          title: "📱 Progressive Web App",
+          description: "Installable on mobile and desktop devices for offline-like experiences.",
+        },
+      ],
+      features: [
+        {
+          category: "📦 Stock Management",
+          items: [
+            "Add, edit, delete, and search products easily",
+            "Dedicated interfaces for Stock In and Stock Out operations",
+            "Comprehensive log of all stock movements with filtering",
+          ],
+        },
+        {
+          category: "⚙️ Core Capabilities",
+          items: [
+            "Secure Authentication with Supabase Auth",
+            "Beautiful UI that works seamlessly across all devices",
+            "Zustand state management",
+          ],
+        },
+      ],
+      techStack: [
+        "Next.js 16",
+        "Supabase (PostgreSQL + RLS)",
+        "Tailwind CSS v4",
+        "Zustand",
+        "Lucide React",
+        "Date-fns",
+      ],
+    },
+  },
 ];
 
 export const blogPosts = [

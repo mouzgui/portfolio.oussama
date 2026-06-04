@@ -46,106 +46,255 @@ export const win98Icons = {
 
   snake: `<svg ${s}><rect x="4" y="4" width="40" height="40" rx="2" fill="#1a1a2e" stroke="#808080" stroke-width="1.5"/><rect x="8" y="8" width="32" height="32" fill="#111"/><path d="M12 32 L12 20 L20 20 L20 28 L28 28 L28 16 L36 16" fill="none" stroke="#27C93F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="36" cy="16" r="3" fill="#27C93F"/><circle cx="34" cy="15" r="1" fill="#000"/><rect x="16" y="12" width="4" height="4" rx="1" fill="#ff3333"/></svg>`,
 
-  spotify: `<svg ${s}><rect x="4" y="4" width="40" height="40" rx="20" fill="#1DB954" stroke="#808080" stroke-width="1.5"/><path d="M34 32.5c-.5 0-.8-.2-1.1-.4-6-3.7-13.6-4.5-22.5-2.5-.9.2-1.7-.4-1.9-1.2-.2-.9.4-1.7 1.2-1.9 9.8-2.3 18.3-1.3 25.1 2.9.8.4 1 1.3.5 2.1-.3.6-.8 1-1.3 1z" fill="#fff"/><path d="M36.1 26.5c-.6 0-1-.2-1.3-.6-7.1-4.4-18-5.7-25-3.6-1 .3-2-.3-2.3-1.3-.3-1 .3-2 1.3-2.3 8.3-2.5 20.3-1 28.5 4.1 1 .6 1.3 1.8.7 2.8-.5.6-1 9-1.9 9z" fill="#fff"/><path d="M38.5 20c-.7 0-1.2-.2-1.6-.7-8.2-4.9-21-6.4-28.6-4.1-1.3.4-2.6-.4-3-1.6-.4-1.3.4-2.6 1.6-3 8.9-2.7 23.3-1.1 32.7 4.5 1.2.7 1.6 2.2.9 3.4-.6 1.1-1.3 1.5-2 1.5z" fill="#fff"/></svg>`
+  spotify: `<svg ${s}><rect x="4" y="4" width="40" height="40" rx="20" fill="#1DB954" stroke="#808080" stroke-width="1.5"/><path d="M34 32.5c-.5 0-.8-.2-1.1-.4-6-3.7-13.6-4.5-22.5-2.5-.9.2-1.7-.4-1.9-1.2-.2-.9.4-1.7 1.2-1.9 9.8-2.3 18.3-1.3 25.1 2.9.8.4 1 1.3.5 2.1-.3.6-.8 1-1.3 1z" fill="#fff"/><path d="M36.1 26.5c-.6 0-1-.2-1.3-.6-7.1-4.4-18-5.7-25-3.6-1 .3-2-.3-2.3-1.3-.3-1 .3-2 1.3-2.3 8.3-2.5 20.3-1 28.5 4.1 1 .6 1.3 1.8.7 2.8-.5.6-1 9-1.9 9z" fill="#fff"/><path d="M38.5 20c-.7 0-1.2-.2-1.6-.7-8.2-4.9-21-6.4-28.6-4.1-1.3.4-2.6-.4-3-1.6-.4-1.3.4-2.6 1.6-3 8.9-2.7 23.3-1.1 32.7 4.5 1.2.7 1.6 2.2.9 3.4-.6 1.1-1.3 1.5-2 1.5z" fill="#fff"/></svg>`,
 };
 
 // Virtual file system tree structure
 // Each node: { name, type: 'folder'|'file', icon, children?, fileType?, appHandler? }
 
 export const fileTree = {
-  name: 'Desktop',
-  type: 'folder',
+  name: "Desktop",
+  type: "folder",
   icon: win98Icons.desktop,
   children: [
     {
-      name: 'About Me',
-      type: 'folder',
+      name: "About Me",
+      type: "folder",
       icon: win98Icons.folder,
       children: [
-        { name: 'bio.txt', type: 'file', icon: win98Icons.text, fileType: 'text' },
-        { name: 'values.md', type: 'file', icon: win98Icons.markdown, fileType: 'markdown' },
-        { name: 'skills.md', type: 'file', icon: win98Icons.markdown, fileType: 'markdown' },
-      ]
+        {
+          name: "bio.txt",
+          type: "file",
+          icon: win98Icons.text,
+          fileType: "text",
+        },
+        {
+          name: "values.md",
+          type: "file",
+          icon: win98Icons.markdown,
+          fileType: "markdown",
+        },
+        {
+          name: "skills.md",
+          type: "file",
+          icon: win98Icons.markdown,
+          fileType: "markdown",
+        },
+      ],
     },
     {
-      name: 'Experience',
-      type: 'folder',
+      name: "Experience",
+      type: "folder",
       icon: win98Icons.experience,
       children: [
-        { name: 'RWS_Group.md', type: 'file', icon: win98Icons.markdown, fileType: 'markdown' },
-        { name: 'Teal_ElGhazali.md', type: 'file', icon: win98Icons.markdown, fileType: 'markdown' },
-        { name: 'Freelance.md', type: 'file', icon: win98Icons.markdown, fileType: 'markdown' },
-        { name: 'SOREMED.md', type: 'file', icon: win98Icons.markdown, fileType: 'markdown' }
-      ]
+        {
+          name: "RWS_Group.md",
+          type: "file",
+          icon: win98Icons.markdown,
+          fileType: "markdown",
+        },
+        {
+          name: "Teal_ElGhazali.md",
+          type: "file",
+          icon: win98Icons.markdown,
+          fileType: "markdown",
+        },
+        {
+          name: "Freelance.md",
+          type: "file",
+          icon: win98Icons.markdown,
+          fileType: "markdown",
+        },
+        {
+          name: "SOREMED.md",
+          type: "file",
+          icon: win98Icons.markdown,
+          fileType: "markdown",
+        },
+      ],
     },
     {
-      name: 'Education',
-      type: 'folder',
+      name: "Education",
+      type: "folder",
       icon: win98Icons.folder,
       children: [
-        { name: 'ALX_Certificate.md', type: 'file', icon: win98Icons.markdown, fileType: 'markdown' },
-        { name: 'Harvard_CS50.md', type: 'file', icon: win98Icons.markdown, fileType: 'markdown' },
-        { name: '1337_Bootcamp.md', type: 'file', icon: win98Icons.markdown, fileType: 'markdown' },
-        { name: 'Udemy_Courses.md', type: 'file', icon: win98Icons.markdown, fileType: 'markdown' }
-      ]
+        {
+          name: "ALX_Certificate.md",
+          type: "file",
+          icon: win98Icons.markdown,
+          fileType: "markdown",
+        },
+        {
+          name: "Harvard_CS50.md",
+          type: "file",
+          icon: win98Icons.markdown,
+          fileType: "markdown",
+        },
+        {
+          name: "1337_Bootcamp.md",
+          type: "file",
+          icon: win98Icons.markdown,
+          fileType: "markdown",
+        },
+        {
+          name: "Udemy_Courses.md",
+          type: "file",
+          icon: win98Icons.markdown,
+          fileType: "markdown",
+        },
+      ],
     },
     {
-      name: 'Projects',
-      type: 'folder',
+      name: "Projects",
+      type: "folder",
       icon: win98Icons.projectsFolder,
       children: [
-        { name: 'Red Gold Portal.app', type: 'file', icon: win98Icons.dataforge, fileType: 'project', appHandler: 'project' },
-        { name: 'Optician Shop Management.app', type: 'file', icon: win98Icons.project, fileType: 'project', appHandler: 'project' },
-        { name: 'Headless-PWA-store.app', type: 'file', icon: win98Icons.cloudsync, fileType: 'project', appHandler: 'project' },
-        { name: 'Zombie Subscriptions.app', type: 'file', icon: win98Icons.dataforge, fileType: 'project', appHandler: 'project' },
-        { name: 'Complaints App.app', type: 'file', icon: win98Icons.nebula, fileType: 'project', appHandler: 'project' },
-      ]
+        {
+          name: "Red Gold Portal.app",
+          type: "file",
+          icon: win98Icons.dataforge,
+          fileType: "project",
+          appHandler: "project",
+        },
+        {
+          name: "Optician Shop Management.app",
+          type: "file",
+          icon: win98Icons.project,
+          fileType: "project",
+          appHandler: "project",
+        },
+        {
+          name: "Headless-PWA-store.app",
+          type: "file",
+          icon: win98Icons.cloudsync,
+          fileType: "project",
+          appHandler: "project",
+        },
+        {
+          name: "Zombie Subscriptions.app",
+          type: "file",
+          icon: win98Icons.dataforge,
+          fileType: "project",
+          appHandler: "project",
+        },
+        {
+          name: "Complaints App.app",
+          type: "file",
+          icon: win98Icons.nebula,
+          fileType: "project",
+          appHandler: "project",
+        },
+        {
+          name: "Gestion de Stock.app",
+          type: "file",
+          icon: win98Icons.project,
+          fileType: "project",
+          appHandler: "project",
+        },
+      ],
     },
     {
-      name: 'Playground',
-      type: 'folder',
+      name: "Playground",
+      type: "folder",
       icon: win98Icons.playground,
       children: [
-        { name: 'ideas.txt', type: 'file', icon: win98Icons.text, fileType: 'text' },
-        { name: '.secret', type: 'file', icon: win98Icons.secret, fileType: 'text', hidden: true },
-        { name: 'ascii-art.txt', type: 'file', icon: win98Icons.text, fileType: 'text' },
-      ]
+        {
+          name: "ideas.txt",
+          type: "file",
+          icon: win98Icons.text,
+          fileType: "text",
+        },
+        {
+          name: ".secret",
+          type: "file",
+          icon: win98Icons.secret,
+          fileType: "text",
+          hidden: true,
+        },
+        {
+          name: "ascii-art.txt",
+          type: "file",
+          icon: win98Icons.text,
+          fileType: "text",
+        },
+      ],
     },
-    { name: 'cv.pdf', type: 'file', icon: win98Icons.pdf, fileType: 'pdf', appHandler: 'pdf' },
     {
-      name: 'Trash',
-      type: 'folder',
+      name: "cv.pdf",
+      type: "file",
+      icon: win98Icons.pdf,
+      fileType: "pdf",
+      appHandler: "pdf",
+    },
+    {
+      name: "Trash",
+      type: "folder",
       icon: win98Icons.trashFull,
       children: [
-        { name: 'passwords.txt', type: 'file', icon: win98Icons.text, fileType: 'text', easterEggMsg: "Absolutely not. PS don't store your passwords in a .txt file like EVER" },
-        { name: 'journal_2020-2022.txt', type: 'file', icon: win98Icons.text, fileType: 'text', easterEggMsg: "Nope. Nope. Nope." },
-        { name: 'bank_transactions_2021.csv', type: 'file', icon: win98Icons.csv, fileType: 'text', easterEggMsg: "Financial data is not part of the portfolio." },
-        { name: 'side_projects_roi.csv', type: 'file', icon: win98Icons.csv, fileType: 'text', easterEggMsg: "Some metrics hurt more than they help." }
+        {
+          name: "passwords.txt",
+          type: "file",
+          icon: win98Icons.text,
+          fileType: "text",
+          easterEggMsg:
+            "Absolutely not. PS don't store your passwords in a .txt file like EVER",
+        },
+        {
+          name: "journal_2020-2022.txt",
+          type: "file",
+          icon: win98Icons.text,
+          fileType: "text",
+          easterEggMsg: "Nope. Nope. Nope.",
+        },
+        {
+          name: "bank_transactions_2021.csv",
+          type: "file",
+          icon: win98Icons.csv,
+          fileType: "text",
+          easterEggMsg: "Financial data is not part of the portfolio.",
+        },
+        {
+          name: "side_projects_roi.csv",
+          type: "file",
+          icon: win98Icons.csv,
+          fileType: "text",
+          easterEggMsg: "Some metrics hurt more than they help.",
+        },
       ],
-      isTrash: true
-    }
-  ]
+      isTrash: true,
+    },
+  ],
 };
 
 // Icon mapping for Finder sidebar
 export const sidebarFavorites = [
-  { name: 'Desktop', path: '/', icon: win98Icons.desktop },
-  { name: 'About Me', path: '/About Me', icon: win98Icons.folder },
-  { name: 'Experience', path: '/Experience', icon: win98Icons.experience },
-  { name: 'Education', path: '/Education', icon: win98Icons.folder },
-  { name: 'Projects', path: '/Projects', icon: win98Icons.projectsFolder },
-  { name: 'Playground', path: '/Playground', icon: win98Icons.playground },
-  { name: 'Trash', path: '/Trash', icon: win98Icons.trashEmpty },
+  { name: "Desktop", path: "/", icon: win98Icons.desktop },
+  { name: "About Me", path: "/About Me", icon: win98Icons.folder },
+  { name: "Experience", path: "/Experience", icon: win98Icons.experience },
+  { name: "Education", path: "/Education", icon: win98Icons.folder },
+  { name: "Projects", path: "/Projects", icon: win98Icons.projectsFolder },
+  { name: "Playground", path: "/Playground", icon: win98Icons.playground },
+  { name: "Trash", path: "/Trash", icon: win98Icons.trashEmpty },
 ];
 
 // Dock items configuration
 export const dockItems = [
-  { id: 'finder', name: 'Finder', icon: win98Icons.folderOpen, action: 'app' },
-  { id: 'terminal', name: 'Terminal', icon: win98Icons.terminal, action: 'app' },
-  { id: 'email', name: 'Mail', icon: win98Icons.mail, action: 'app' },
-  { id: 'minesweeper', name: 'Minesweeper', icon: win98Icons.minesweeper, action: 'app' },
-  { id: 'snake', name: 'Snake', icon: win98Icons.snake, action: 'app' },
-  { id: 'separator' },
-  { id: 'spotify', name: 'Spotify', icon: win98Icons.spotify, action: 'app' },
-  { id: 'trash', name: 'Trash', icon: win98Icons.trashEmpty, action: 'app' },
+  { id: "finder", name: "Finder", icon: win98Icons.folderOpen, action: "app" },
+  {
+    id: "terminal",
+    name: "Terminal",
+    icon: win98Icons.terminal,
+    action: "app",
+  },
+  { id: "email", name: "Mail", icon: win98Icons.mail, action: "app" },
+  {
+    id: "minesweeper",
+    name: "Minesweeper",
+    icon: win98Icons.minesweeper,
+    action: "app",
+  },
+  { id: "snake", name: "Snake", icon: win98Icons.snake, action: "app" },
+  { id: "separator" },
+  { id: "spotify", name: "Spotify", icon: win98Icons.spotify, action: "app" },
+  { id: "trash", name: "Trash", icon: win98Icons.trashEmpty, action: "app" },
 ];

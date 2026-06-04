@@ -94,6 +94,7 @@ export const fileTree = {
       type: 'folder',
       icon: win98Icons.projectsFolder,
       children: [
+        { name: 'Red Gold Portal.app', type: 'file', icon: win98Icons.dataforge, fileType: 'project', appHandler: 'project' },
         { name: 'Optician Shop Management.app', type: 'file', icon: win98Icons.project, fileType: 'project', appHandler: 'project' },
         { name: 'Headless-PWA-store.app', type: 'file', icon: win98Icons.cloudsync, fileType: 'project', appHandler: 'project' },
         { name: 'Zombie Subscriptions.app', type: 'file', icon: win98Icons.dataforge, fileType: 'project', appHandler: 'project' },
